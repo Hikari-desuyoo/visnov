@@ -1,5 +1,5 @@
-defmodule MntWeb.PageControllerTest do
-  use MntWeb.ConnCase
+defmodule VisnovWeb.PageControllerTest do
+  use VisnovWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

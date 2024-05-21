@@ -1,10 +1,10 @@
-defmodule MntWeb.PageHTML do
+defmodule VisnovWeb.PageHTML do
   @moduledoc """
   This module contains pages rendered by PageController.
 
   See the `page_html` directory for all templates available.
   """
-  use MntWeb, :html
+  use VisnovWeb, :html
 
   embed_templates "page_html/*"
 end

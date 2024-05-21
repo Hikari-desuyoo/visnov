@@ -1,4 +1,4 @@
-# Mnt
+# Visnov
 
 To start your Phoenix server:
 

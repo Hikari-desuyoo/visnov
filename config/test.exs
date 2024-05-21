@@ -5,23 +5,23 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :mnt, Mnt.Repo,
+config :visnov, Visnov.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "mnt_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "visnov_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :mnt, MntWeb.Endpoint,
+config :visnov, VisnovWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "rJPtXhri6N21qS1GHZBX5RTC2GdfoGwC/7IPZnKzAr1nym95Vlp5+v579CCJY8xv",
+  secret_key_base: "o5ns3HWjp+b219c75SGncey2BQfumEuPqAOz9VkbnklhcRhxvIlUddmS7At36b1e",
   server: false
 
 # In test we don't send emails.
-config :mnt, Mnt.Mailer, adapter: Swoosh.Adapters.Test
+config :visnov, Visnov.Mailer, adapter: Swoosh.Adapters.Test
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false

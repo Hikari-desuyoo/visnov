@@ -1,12 +1,12 @@
-defmodule MntWeb do
+defmodule VisnovWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use MntWeb, :controller
-      use MntWeb, :html
+      use VisnovWeb, :controller
+      use VisnovWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule MntWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: MntWeb.Layouts]
+        layouts: [html: VisnovWeb.Layouts]
 
       import Plug.Conn
-      import MntWeb.Gettext
+      import VisnovWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule MntWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {MntWeb.Layouts, :app}
+        layout: {VisnovWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule MntWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import MntWeb.CoreComponents
-      import MntWeb.Gettext
+      import VisnovWeb.CoreComponents
+      import VisnovWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule MntWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: MntWeb.Endpoint,
-        router: MntWeb.Router,
-        statics: MntWeb.static_paths()
+        endpoint: VisnovWeb.Endpoint,
+        router: VisnovWeb.Router,
+        statics: VisnovWeb.static_paths()
     end
   end
 

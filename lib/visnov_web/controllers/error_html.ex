@@ -1,17 +1,17 @@
-defmodule MntWeb.ErrorHTML do
+defmodule VisnovWeb.ErrorHTML do
   @moduledoc """
   This module is invoked by your endpoint in case of errors on HTML requests.
 
   See config/config.exs.
   """
-  use MntWeb, :html
+  use VisnovWeb, :html
 
   # If you want to customize your error pages,
   # uncomment the embed_templates/1 call below
   # and add pages to the error directory:
   #
-  #   * lib/mnt_web/controllers/error_html/404.html.heex
-  #   * lib/mnt_web/controllers/error_html/500.html.heex
+  #   * lib/visnov_web/controllers/error_html/404.html.heex
+  #   * lib/visnov_web/controllers/error_html/500.html.heex
   #
   # embed_templates "error_html/*"
 

@@ -1,4 +1,4 @@
-defmodule MntWeb.CoreComponents do
+defmodule VisnovWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule MntWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import MntWeb.Gettext
+  import VisnovWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -661,9 +661,9 @@ defmodule MntWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(MntWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(VisnovWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(MntWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(VisnovWeb.Gettext, "errors", msg, opts)
     end
   end
 

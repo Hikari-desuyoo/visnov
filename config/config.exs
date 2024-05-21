@@ -7,20 +7,20 @@
 # General application configuration
 import Config
 
-config :mnt,
-  ecto_repos: [Mnt.Repo],
+config :visnov,
+  ecto_repos: [Visnov.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :mnt, MntWeb.Endpoint,
+config :visnov, VisnovWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: MntWeb.ErrorHTML, json: MntWeb.ErrorJSON],
+    formats: [html: VisnovWeb.ErrorHTML, json: VisnovWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: Mnt.PubSub,
-  live_view: [signing_salt: "g/jYyzlE"]
+  pubsub_server: Visnov.PubSub,
+  live_view: [signing_salt: "NTyD6nwl"]
 
 # Configures the mailer
 #
@@ -29,12 +29,12 @@ config :mnt, MntWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :mnt, Mnt.Mailer, adapter: Swoosh.Adapters.Local
+config :visnov, Visnov.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  mnt: [
+  visnov: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.0",
-  mnt: [
+  visnov: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

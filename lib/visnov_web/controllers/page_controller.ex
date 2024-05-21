@@ -1,5 +1,5 @@
-defmodule MntWeb.PageController do
-  use MntWeb, :controller
+defmodule VisnovWeb.PageController do
+  use VisnovWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

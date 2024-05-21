@@ -1,4 +1,4 @@
-defmodule MntWeb.ConnCase do
+defmodule VisnovWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule MntWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use MntWeb.ConnCase, async: true`, although
+  by setting `use VisnovWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -20,19 +20,19 @@ defmodule MntWeb.ConnCase do
   using do
     quote do
       # The default endpoint for testing
-      @endpoint MntWeb.Endpoint
+      @endpoint VisnovWeb.Endpoint
 
-      use MntWeb, :verified_routes
+      use VisnovWeb, :verified_routes
 
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import MntWeb.ConnCase
+      import VisnovWeb.ConnCase
     end
   end
 
   setup tags do
-    Mnt.DataCase.setup_sandbox(tags)
+    Visnov.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

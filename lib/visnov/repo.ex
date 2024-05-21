@@ -1,5 +1,5 @@
-defmodule Mnt.Repo do
+defmodule Visnov.Repo do
   use Ecto.Repo,
-    otp_app: :mnt,
+    otp_app: :visnov,
     adapter: Ecto.Adapters.Postgres
 end
